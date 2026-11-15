@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ALLMART.TT | Buy, sell, rent, work. One app.</title>
+<meta name="description" content="Trinidad and Tobago's all-in-one marketplace. Video-verified sellers, escrow-protected payments and same-day delivery.">
+<meta name="theme-color" content="#7B1E3A">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%237B1E3A'/%3E%3Cpath d='M18 46 30 16h4l12 30h-7l-2.6-7H27.6L25 46Zm11.6-13h6.8L33 23.6Z' fill='%23fff'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="preload" as="image" href="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?w=520&h=720&fit=crop&q=60&auto=format">
+<link rel="stylesheet" href="styles.css">
+<script>try{var t=localStorage.getItem('am-theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head>
+<body>
+<a class="skip" href="#feed">Skip to products</a>
+
+<header class="topbar" id="top">
+  <div class="wrap topbar-in">
+    <a class="logo" href="#top" aria-label="ALLMART.TT home">
+      <span class="logo-mark" aria-hidden="true">A</span>
+      <span class="logo-word">ALLMART<em>.TT</em></span>
+    </a>
+    <form class="search search-top" role="search" data-search>
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      <label class="sr" for="q-top">Search</label>
+      <input id="q-top" type="search" placeholder="Search products, cars, properties, services, jobs..." autocomplete="off">
+    </form>
+    <nav class="top-actions" aria-label="Account">
+      <button class="sell-pill" data-open="sell" type="button"><i class="ph ph-plus" aria-hidden="true"></i>Sell</button>
+      <button class="icon-btn" data-open="favs" type="button" aria-label="Saved items"><i class="ph ph-heart"></i><span class="count" data-fav-count hidden>0</span></button>
+      <button class="icon-btn" data-open="cart" type="button" aria-label="Cart"><i class="ph ph-shopping-bag"></i><span class="count" data-cart-count hidden>0</span></button>
+      <button class="icon-btn" data-open="account" type="button" aria-label="Profile"><i class="ph ph-user-circle"></i></button>
+      <button class="icon-btn theme-btn" type="button" aria-label="Switch theme" data-theme-toggle><i class="ph ph-moon"></i></button>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+  <!-- Banner -->
+  <section class="wrap hero-wrap">
+    <div class="banner">
+      <div class="banner-copy">
+        <h1 class="reveal-h1"><span>Buy, sell, rent, work.</span> <span class="h1-b">One app.</span></h1>
+        <p class="banner-sub">Every seller verified on video. Every dollar held in escrow until you confirm. Same-day delivery across Trinidad.</p>
+        <div class="banner-ctas">
+          <a class="btn btn-light" href="#feed">Start shopping <span class="btn-ico"><i class="ph ph-arrow-down"></i></span></a>
+          <button class="btn btn-ghost-light" data-open="sell" type="button">Sell on ALLMART</button>
+        </div>
+      </div>
+      <div class="stack" aria-label="Live seller videos" data-stack></div>
+    </div>
+
+    <form class="search search-hero" role="search" data-search>
+      <i class="ph ph-magnifying-glass" aria-hidden="true"></i>
+      <label class="sr" for="q-hero">Search everything</label>
+      <input id="q-hero" type="search" placeholder="Search products, cars, properties, services, jobs..." autocomplete="off">
+      <button class="search-go" type="submit" aria-label="Search"><i class="ph ph-arrow-right"></i></button>
+    </form>
+
+    <div class="cats" role="tablist" aria-label="Categories" data-cats></div>
+  </section>
+
+  <!-- Trust row -->
+  <section class="wrap trust" aria-label="Why it is safe">
+    <div class="trust-item"><i class="ph-fill ph-seal-check"></i><div><strong>Verified sellers</strong><span>ID, selfie and business checked. Every listing has a real 15-second video.</span></div></div>
+    <div class="trust-item"><i class="ph-fill ph-shield-check"></i><div><strong>Escrow protected</strong><span>Your money waits with ALLMART. The seller is paid only after you confirm.</span></div></div>
+    <div class="trust-item"><i class="ph-fill ph-lightning"></i><div><strong>Same day, Trinidad</strong><span>Order before 2 pm and track the rider live on the map.</span></div></div>
+  </section>
+
+  <!-- Feed -->
+  <section class="wrap feed" id="feed" aria-labelledby="feed-h">
+    <div class="feed-head">
+      <h2 id="feed-h"><span class="live-dot" aria-hidden="true"></span>Live now near you</h2>
+      <div class="sort" role="group" aria-label="Sort">
+        <button class="chip is-on" data-sort="live" type="button">Newest</button>
+        <button class="chip" data-sort="low" type="button">Price: low</button>
+        <button class="chip" data-sort="near" type="button">Nearest</button>
+      </div>
+    </div>
+    <p class="feed-note" data-feed-note aria-live="polite"></p>
+    <div class="grid" data-grid></div>
+  </section>
+
+  <!-- Escrow pipeline -->
+  <section class="escrow" id="escrow" aria-labelledby="esc-h">
+    <div class="wrap">
+      <h2 id="esc-h" class="h2">Your money waits for you.<br><span class="muted-h">Not for the seller.</span></h2>
+      <ol class="pipe" data-pipe>
+        <li><span class="node"><i class="ph ph-play-circle"></i></span><strong>Watch the video</strong><span>Every listing is a real 15-second clip of the item.</span></li>
+        <li><span class="node"><i class="ph ph-lock-key"></i></span><strong>Pay into escrow</strong><span>WiPay card, cash or RHAND. ALLMART holds it.</span></li>
+        <li><span class="node"><i class="ph ph-moped"></i></span><strong>Track on the map</strong><span>Watch the rider come to you, live.</span></li>
+        <li><span class="node"><i class="ph ph-hand-tap"></i></span><strong>Confirm it</strong><span>Matches the video? Tap confirm. If not, we refund.</span></li>
+        <li><span class="node"><i class="ph ph-check-fat"></i></span><strong>Seller gets paid</strong><span>Released the same day, straight to their account.</span></li>
+        <span class="token" aria-hidden="true"><i class="ph-fill ph-coins"></i></span>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Rent to own -->
+  <section class="wrap rto" id="cars" aria-labelledby="rto-h">
+    <figure class="rto-photo">
+      <img src="https://images.unsplash.com/photo-1623869675781-80aa31012a5a?w=1100&h=900&fit=crop&q=60&auto=format" alt="White Toyota Corolla parked by the sea" loading="lazy" width="1100" height="900">
+    </figure>
+    <div class="rto-calc">
+      <h2 class="h2">Cars rent-to-own.<br><span class="muted-h">See the total. No hidden months.</span></h2>
+      <div class="field">
+        <span class="label" id="veh-l">Vehicle</span>
+        <div class="seg" role="radiogroup" aria-labelledby="veh-l" data-veh></div>
+      </div>
+      <div class="field">
+        <label class="label" for="dep">Deposit <output data-dep-out></output></label>
+        <input type="range" id="dep" min="10000" max="60000" step="2500" value="25000" data-dep>
+      </div>
+      <div class="field">
+        <span class="label" id="term-l">Term</span>
+        <div class="seg" role="radiogroup" aria-labelledby="term-l" data-term>
+          <button type="button" role="radio" aria-checked="false" data-v="24">24 months</button>
+          <button type="button" role="radio" aria-checked="true" data-v="36">36 months</button>
+          <button type="button" role="radio" aria-checked="false" data-v="48">48 months</button>
+        </div>
+      </div>
+      <div class="rto-out" aria-live="polite">
+        <div><span>Monthly</span><strong data-rto-month>-</strong></div>
+        <div><span>Months</span><strong data-rto-n>-</strong></div>
+        <div class="rto-total"><span>Total you pay, everything in</span><strong data-rto-total>-</strong></div>
+      </div>
+      <p class="fine">Sample figures for this demo. The car is yours after the last payment. No balloon payment at the end.</p>
+      <a class="btn btn-brand" data-rto-wa target="_blank" rel="noopener">Ask about this car <span class="btn-ico"><i class="ph ph-whatsapp-logo"></i></span></a>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section class="mapsec" id="map" aria-labelledby="map-h">
+    <div class="wrap map-in">
+      <div class="map-copy">
+        <h2 id="map-h" class="h2">Sellers live right now.</h2>
+        <p class="lead">Tap a town to see who is selling there. Buy close by, get it today.</p>
+        <ul class="towns" data-towns></ul>
+        <div class="ticker" aria-live="polite" data-ticker></div>
+      </div>
+      <div class="map-box">
+        <svg class="ttmap" viewBox="30 50 960 890" role="img" aria-label="Map of Trinidad and Tobago with live seller counts" data-map></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- More than shopping -->
+  <section class="wrap more" aria-labelledby="more-h">
+    <h2 id="more-h" class="h2">One app for the whole week.</h2>
+    <div class="more-grid">
+      <button class="tile t-prop" data-goto="property" type="button">
+        <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=900&h=700&fit=crop&q=60&auto=format" alt="" loading="lazy">
+        <span class="tile-txt"><strong>Property</strong><em>Rentals and land, viewed on video first</em></span>
+      </button>
+      <button class="tile t-food" data-goto="food" type="button">
+        <img src="https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=700&h=700&fit=crop&q=60&auto=format" alt="" loading="lazy">
+        <span class="tile-txt"><strong>Food Market</strong><em>Farm boxes, mangoes, hot lunch</em></span>
+      </button>
+      <button class="tile t-serv" data-goto="services" type="button">
+        <img src="https://images.unsplash.com/photo-1792799888905-8696bd32a11a?w=700&h=700&fit=crop&q=60&auto=format" alt="" loading="lazy">
+        <span class="tile-txt"><strong>Services</strong><em>AC, braids, repairs. Book and pay safe</em></span>
+      </button>
+      <button class="tile t-jobs" data-goto="jobs" type="button">
+        <img src="https://images.unsplash.com/photo-1586528116022-aeda1613c63d?w=900&h=600&fit=crop&q=60&auto=format" alt="" loading="lazy">
+        <span class="tile-txt"><strong>Jobs</strong><em>Verified employers, daily pay shown up front</em></span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Sell -->
+  <section class="sell" id="sell" aria-labelledby="sell-h">
+    <div class="wrap sell-in">
+      <div class="sell-copy">
+        <h2 id="sell-h" class="h2">Go live in three steps.</h2>
+        <p class="lead">Verify once, film 15 seconds, set your price. Buyers pay into escrow before you even pack the box.</p>
+        <ul class="sell-points">
+          <li><i class="ph ph-identification-card"></i>ID, selfie and business, checked once</li>
+          <li><i class="ph ph-video-camera"></i>A real 15-second video on every listing</li>
+          <li><i class="ph ph-bank"></i>Paid the same day the buyer confirms</li>
+        </ul>
+      </div>
+      <div class="wizard" data-wizard aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- Closing -->
+  <section class="wrap closing">
+    <h2 class="closing-h">Better than scrolling.<br>Built for Trinidad and Tobago.</h2>
+    <div class="closing-ctas">
+      <a class="btn btn-brand" href="#feed">Start shopping <span class="btn-ico"><i class="ph ph-arrow-up"></i></span></a>
+      <a class="btn btn-line" data-wa-general target="_blank" rel="noopener">Order on WhatsApp <i class="ph ph-whatsapp-logo"></i></a>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="foot-brand">
+      <span class="logo-word big">ALLMART<em>.TT</em></span>
+      <p>Buy, sell, rent, work. One app.</p>
+    </div>
+    <div class="foot-cols">
+      <div><strong>Shop</strong><a href="#feed">Live now</a><a href="#cars">Rent-to-own</a><a href="#map">Seller map</a></div>
+      <div><strong>Sell</strong><a href="#sell">Start selling</a><a href="#escrow">How escrow works</a></div>
+      <div><strong>Pay with</strong><span>WiPay</span><span>Cash on delivery</span><span>RHAND</span></div>
+    </div>
+  </div>
+  <div class="wrap foot-base">
+    <span>Concept demo. Listings, sellers and prices are samples.</span>
+    <a href="https://wa.me/18682591409" target="_blank" rel="noopener">Demo site by Portside Digital</a>
+  </div>
+</footer>
+
+<!-- Bottom menu -->
+<nav class="dock" aria-label="App menu">
+  <a href="#top" class="dock-i is-on" data-dock="home"><i class="ph ph-house"></i><span>Home</span></a>
+  <a href="#feed" class="dock-i" data-dock="shop"><i class="ph ph-storefront"></i><span>Shop</span></a>
+  <button class="dock-sell" data-open="sell" type="button" aria-label="Sell"><i class="ph ph-plus"></i></button>
+  <button class="dock-i" data-open="messages" type="button"><i class="ph ph-chat-circle-dots"></i><span>Messages</span><b class="dock-badge">2</b></button>
+  <button class="dock-i" data-open="account" type="button"><i class="ph ph-user"></i><span>Account</span></button>
+</nav>
+
+<!-- Sheet -->
+<div class="scrim" data-scrim hidden></div>
+<div class="sheet" role="dialog" aria-modal="true" aria-label="Details" data-sheet hidden>
+  <div class="grab" aria-hidden="true"></div>
+  <button class="sheet-x" type="button" aria-label="Close" data-close><i class="ph ph-x"></i></button>
+  <div class="sheet-body" data-sheet-body></div>
+</div>
+
+<div class="toast" role="status" aria-live="polite" data-toast></div>
+
+<script src="map-data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
